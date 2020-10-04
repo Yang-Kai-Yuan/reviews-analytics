@@ -18,3 +18,13 @@ for d in data:
 	if len(d) < 100:
 		new.append(d)
 print('總共有', len(new), '則留言長度小於100個字母')
+
+good = []
+for d in data:
+	if 'good' in d:
+		good.append(d)
+print('總共有', len(d), '則留言含good')
+print(good[0])
+
+bad = [d for d in data if 'bad' in d]
+print('總共有', len(bad), '則留言含bad')
