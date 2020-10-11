@@ -8,6 +8,18 @@ with open('reviews.txt', 'r') as f:
 			print(len(data))
 print('總共有', len(data), '則留言')
 
+wc = {}
+for d in data:
+	words = d.split()
+	for word in words:
+		if word in wc:
+			wc[word] += 1
+		else:
+			wc[word] = 1
+for word in wc:
+	if wc[word] > 10000:
+		print(word, wc[word])
+
 sum_len = 0
 for d in data:
 	sum_len = sum_len + len(d)
